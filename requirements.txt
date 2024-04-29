@@ -1,0 +1,2 @@
+gcodeparser==0.2.0 ; python_version >= "3.11" and python_version < "4.0"
+ncparse==1.0.7 ; python_version >= "3.11" and python_version < "4.0"
