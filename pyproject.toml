@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "jumplayer"
+version = "0.1.0"
+description = "jump layer"
+authors = ["weslenpy <weslenjhony@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+NCParse = "^1.0.7"
+gcodeparser = "^0.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
