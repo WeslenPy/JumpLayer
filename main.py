@@ -1,5 +1,5 @@
 from gcodeparser import GcodeParser
-
+import os 
 
 GCODES_IGNORE = [
   "G",
@@ -16,8 +16,12 @@ class JumpLayer:
     
     
   def load_file(self)->str:
-    with open(self.filename, 'r') as f:
-      return f.read()
+    if os.path.exists(self.filename):
+      with open(self.filename, 'r') as f:
+        return f.read()
+    else:
+      print("G-code not found!")
+      raise os._exit(-1)
     
   def get_pos_layer(self,layer:int)->int:
     
@@ -74,7 +78,7 @@ if __name__ == "__main__":
   
   
   jump = JumpLayer(filename="BOX_OUTLET.gcode")
-  position_layer = jump.get_pos_layer(layer=96)
+  position_layer = jump.get_pos_layer(layer=104)
   if position_layer==False:print("Layer not found!")
   else:
     new_gcode = jump.jump_layers(position_layer=position_layer)
